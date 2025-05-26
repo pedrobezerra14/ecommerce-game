@@ -8,94 +8,107 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
+const PRODUTOS_FILE = './data/produtos.json';
+
+// Função auxiliar para ler os produtos do arquivo
+function lerProdutos() {
+    try {
+        const data = fs.readFileSync(PRODUTOS_FILE, 'utf8');
+        const parsedData = JSON.parse(data);
+        return parsedData.produtos || []; 
+    } catch (error) {
+        console.error('Erro ao ler produtos.json:', error);
+        return []; 
+    }
+}
+
+// Função auxiliar para escrever os produtos no arquivo
+function escreverProdutos(produtos) {
+    try {
+        const dataToSave = JSON.stringify({ produtos: produtos }, null, 2);
+        fs.writeFileSync(PRODUTOS_FILE, dataToSave, 'utf8');
+    } catch (error) {
+        console.error('Erro ao escrever produtos.json:', error);
+        throw new Error('Falha ao salvar os produtos.'); 
+    }
+}
+
 // Rota GET para todos os produtos
 app.get('/produtos', (req, res) => {
-  const data = fs.readFileSync('./data/produtos.json');
-  const produtos = JSON.parse(data);
-  res.json(produtos);
+    const produtos = lerProdutos();
+    res.json(produtos);
 });
 
 // Rota GET para um produto por ID
 app.get('/produtos/:id', (req, res) => {
-  const id = parseInt(req.params.id);
-  const data = fs.readFileSync('./data/produtos.json');
-  const produtos = JSON.parse(data);
-  const produto = produtos.find(p => p.id === id);
+    const id = parseInt(req.params.id);
+    const produtos = lerProdutos();
+    const produto = produtos.find(p => p.id === id);
 
-  if (produto) {
-    res.json(produto);
-  } else {
-    res.status(404).json({ mensagem: 'Produto não encontrado' });
-  }
+    if (produto) {
+        res.json(produto);
+    } else {
+        res.status(404).json({ mensagem: 'Produto não encontrado' });
+    }
 });
 
 // Rota POST para adicionar novo produto
 app.post('/produtos', (req, res) => {
-  const novoProduto = req.body;
+    const novoProduto = req.body;
+    let produtos = lerProdutos();
 
-  fs.readFile('./data/produtos.json', 'utf8', (err, data) => {
-    const produtos = data ? JSON.parse(data) : [];
+    const newId = produtos.length > 0 ? Math.max(...produtos.map(p => p.id)) + 1 : 1;
+    novoProduto.id = newId;
 
     produtos.push(novoProduto);
 
-    fs.writeFile('./data/produtos.json', JSON.stringify(produtos, null, 2), err => {
-      if (err) return res.status(500).json({ erro: 'Erro ao salvar' });
-
-      res.status(201).json({ mensagem: 'Produto salvo com sucesso!' });
-    });
-  });
+    try {
+        escreverProdutos(produtos);
+        res.status(201).json({ mensagem: 'Produto salvo com sucesso!', produto: novoProduto });
+    } catch (erro) {
+        res.status(500).json({ erro: erro.message });
+    }
 });
 
-// Rota DELETE para remover produto por ID
 app.delete('/produtos/:id', (req, res) => {
-  const id = parseInt(req.params.id);
-
-  fs.readFile('./data/produtos.json', 'utf8', (err, data) => {
-    if (err) return res.status(500).json({ erro: 'Erro ao ler o arquivo' });
-
-    let produtos = JSON.parse(data);
+    const id = parseInt(req.params.id);
+    let produtos = lerProdutos();
     const index = produtos.findIndex(p => p.id === id);
 
     if (index === -1) {
-      return res.status(404).json({ mensagem: 'Produto não encontrado' });
+        return res.status(404).json({ mensagem: 'Produto não encontrado' });
     }
 
     produtos.splice(index, 1);
 
-    fs.writeFile('./data/produtos.json', JSON.stringify(produtos, null, 2), err => {
-      if (err) return res.status(500).json({ erro: 'Erro ao salvar alterações' });
-
-      res.json({ mensagem: 'Produto excluído com sucesso' });
-    });
-  });
+    try {
+        escreverProdutos(produtos);
+        res.json({ mensagem: 'Produto excluído com sucesso' });
+    } catch (erro) {
+        res.status(500).json({ erro: erro.message });
+    }
 });
 
-// Rota PUT para atualizar produto por ID
 app.put('/produtos/:id', (req, res) => {
-  const id = parseInt(req.params.id);
-  const dadosAtualizados = req.body;
-
-  fs.readFile('./data/produtos.json', 'utf8', (err, data) => {
-    if (err) return res.status(500).json({ erro: 'Erro ao ler o arquivo' });
-
-    let produtos = JSON.parse(data);
+    const id = parseInt(req.params.id);
+    const dadosAtualizados = req.body;
+    let produtos = lerProdutos();
     const index = produtos.findIndex(p => p.id === id);
 
     if (index === -1) {
-      return res.status(404).json({ mensagem: 'Produto não encontrado' });
+        return res.status(404).json({ mensagem: 'Produto não encontrado' });
     }
 
-    produtos[index] = { id, ...dadosAtualizados };
+    produtos[index] = { id: id, ...dadosAtualizados };
 
-    fs.writeFile('./data/produtos.json', JSON.stringify(produtos, null, 2), err => {
-      if (err) return res.status(500).json({ erro: 'Erro ao salvar alterações' });
-
-      res.json({ mensagem: 'Produto atualizado com sucesso' });
-    });
-  });
+    try {
+        escreverProdutos(produtos);
+        res.json({ mensagem: 'Produto atualizado com sucesso', produto: produtos[index] });
+    } catch (erro) {
+        res.status(500).json({ erro: erro.message });
+    }
 });
 
-// Inicialização do servidor
 app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
+    console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
