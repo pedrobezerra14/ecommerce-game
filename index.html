@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja Gamer</title>
+    <link rel="shortcut icon" href="./img/icon.ico" type="image/x-icon">
+    <title>Mr. Cheng Store</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <header style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
-        <h1>Loja Gamer</h1>
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <input type="text" id="campo-busca" placeholder="Buscar produtos..." style="padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
-            <a href="cadastro.html" class="btn-cadastro">Cadastrar Produto</a>
+    <header>
+        <div class="header-content">
+            <a href="/" style="cursor: pointer;">
+                <img src="./img/logosite.png" alt="Logo Loja Gamer" id="logo-header">
+            </a>
+
+            <nav class="collapse-menu" id="collapse-menu">
+                <div class="menu-items">
+                    <input type="text" id="campo-busca" placeholder="Buscar produtos...">
+                    <a href="cadastro.html" class="btn-cadastro">Cadastrar Produto</a>
+                </div>
+            </nav>
         </div>
     </header>
     <main>

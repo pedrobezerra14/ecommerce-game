@@ -1,88 +1,228 @@
 {
   "produtos": [
     {
+      "id": 0,
+      "nome": "Red Dead Redemption II",
+      "preco": 299.9,
+      "descricao": "Red Dead Redemption 2, a épica aventura de mundo aberto da Rockstar Games aclamada pela crítica e o jogo mais bem avaliado desta geração de consoles, agora chega aprimorado para PC com conteúdos inéditos no Modo História, melhorias visuais e muito mais.",
+      "imagem": "img/rdr2.png"
+    },
+    {
       "id": 1,
-      "nome": "The Last of Us Part I (PS5)",
-      "preco": 299.90,
+      "nome": "The Last of Us II",
+      "preco": 299.9,
       "descricao": "Remake do aclamado jogo de ação e aventura pós-apocalíptico, com gráficos e jogabilidade aprimorados para o PS5.",
       "imagem": "img/last-of-us.png"
     },
     {
       "id": 2,
-      "nome": "God of War Ragnarök (PS5)",
-      "preco": 289.90,
+      "nome": "God of War Ragnarök",
+      "preco": 289.9,
       "descricao": "A épica continuação da saga de Kratos e Atreus na mitologia nórdica, com combates brutais e uma história envolvente.",
       "imagem": "img/god-of-war.png"
     },
     {
       "id": 3,
-      "nome": "Marvel's Spider-Man 2 (PS5)",
-      "preco": 279.90,
+      "nome": "Marvel's Spider-Man",
+      "preco": 279.9,
       "descricao": "Peter Parker e Miles Morales enfrentam novos vilões e desafios em uma Nova York ainda mais detalhada.",
       "imagem": "img/spider-man.png"
     },
     {
       "id": 4,
-      "nome": "Elden Ring (PC)",
-      "preco": 249.90,
+      "nome": "Elden Ring",
+      "preco": 249.9,
       "descricao": "Um vasto RPG de ação em mundo aberto da FromSoftware, conhecido por sua dificuldade e rica lore.",
       "imagem": "img/elden-ring.png"
     },
     {
       "id": 5,
-      "nome": "Cyberpunk 2077 Ultimate Edition (PC)",
-      "preco": 189.90,
+      "nome": "Cyberpunk 2077 Ultimate Edition",
+      "preco": 189.9,
       "descricao": "Inclui o jogo base e a expansão Phantom Liberty, mergulhando você em Night City com novas missões e melhorias.",
       "imagem": "img/cyberpunk.png"
     },
     {
       "id": 6,
       "nome": "Nintendo Switch OLED - Edição Zelda Tears of the Kingdom",
-      "preco": 2599.00,
+      "preco": 2599,
       "descricao": "Console portátil com tela OLED vibrante, nesta edição especial inspirada em The Legend of Zelda: Tears of the Kingdom.",
       "imagem": "img/nintendo-switch.jpg"
     },
     {
       "id": 7,
-      "nome": "Diablo IV (PC)",
-      "preco": 329.90,
+      "nome": "Diablo IV",
+      "preco": 329.9,
       "descricao": "O retorno da clássica franquia de RPG de ação, com um mundo sombrio e hordas de demônios para enfrentar.",
       "imagem": "img/diablo.png"
     },
     {
       "id": 8,
       "nome": "Headset Gamer HyperX Cloud Alpha",
-      "preco": 499.00,
+      "preco": 499,
       "descricao": "Headset com tecnologia de câmara dupla para áudio nítido e conforto prolongado, ideal para longas sessões de jogo.",
       "imagem": "img/headset.jpg"
     },
     {
       "id": 9,
       "nome": "Teclado Mecânico Gamer Logitech G Pro X",
-      "preco": 799.00,
+      "preco": 799,
       "descricao": "Teclado compacto e personalizável com switches GX removíveis, perfeito para eSports.",
       "imagem": "img/teclado.jpg"
     },
     {
       "id": 10,
       "nome": "Mouse Gamer Razer DeathAdder V3 Pro",
-      "preco": 649.00,
+      "preco": 649,
       "descricao": "Mouse sem fio ultraleve com sensor óptico avançado, projetado para alta performance em jogos competitivos.",
       "imagem": "img/mouse.jpg"
     },
     {
       "id": 11,
       "nome": "Monitor Gamer Samsung Odyssey G9 (49 polegadas)",
-      "preco": 9999.00,
+      "preco": 9999,
       "descricao": "Monitor curvo ultrawide com taxa de atualização de 240Hz e tempo de resposta de 1ms, para uma imersão total.",
       "imagem": "img/monitor.jpg"
     },
     {
       "id": 12,
       "nome": "Placa de Vídeo NVIDIA GeForce RTX 4080 Super",
-      "preco": 7899.00,
+      "preco": 7899,
       "descricao": "Placa de vídeo de alta performance para jogos em 4K e criação de conteúdo, com Ray Tracing avançado e DLSS 3.5.",
       "imagem": "img/placa.jpg"
+    },
+    {
+      "id": 13,
+      "nome": "Resident Evil 4 Remake",
+      "preco": 259.9,
+      "descricao": "O clássico survival horror reimaginado com gráficos de ponta e jogabilidade modernizada.",
+      "imagem": "img/re4-remake.png"
+    },
+    {
+      "id": 14,
+      "nome": "Forza Horizon 5",
+      "preco": 199.9,
+      "descricao": "Experimente a maior aventura de corrida do mundo no México, com centenas de carros e paisagens deslumbrantes.",
+      "imagem": "img/forza-horizon5.png"
+    },
+    {
+      "id": 15,
+      "nome": "Call of Duty: Modern Warfare III",
+      "preco": 299.9,
+      "descricao": "A continuação direta da aclamada série Modern Warfare, com campanha emocionante e multiplayer intenso.",
+      "imagem": "img/cod-mw3.png"
+    },
+    {
+      "id": 16,
+      "nome": "Xbox Series X",
+      "preco": 4599,
+      "descricao": "O console mais rápido e poderoso da Microsoft, com gráficos 4K e carregamento ultrarrápido.",
+      "imagem": "img/xbox-series-x.jpg"
+    },
+    {
+      "id": 17,
+      "nome": "PlayStation 5 Slim",
+      "preco": 4299,
+      "descricao": "A versão mais fina e leve do PlayStation 5, com os mesmos gráficos impressionantes e imersão.",
+      "imagem": "img/ps5-slim.jpg"
+    },
+    {
+      "id": 18,
+      "nome": "Asus ROG Zephyrus G14 (2024)",
+      "preco": 8500,
+      "descricao": "Notebook gamer portátil com desempenho poderoso e design elegante, ideal para jogar em qualquer lugar.",
+      "imagem": "img/rog-zephyrus-g14.jpg"
+    },
+    {
+      "id": 19,
+      "nome": "Cadeira Gamer ThunderX3 YAMA1",
+      "preco": 1299,
+      "descricao": "Cadeira ergonômica com múltiplas regulagens e encosto de cabeça ajustável para máximo conforto em longas sessões.",
+      "imagem": "img/cadeira-gamer.jpg"
+    },
+    {
+      "id": 20,
+      "nome": "Volante Logitech G29 Driving Force",
+      "preco": 1599,
+      "descricao": "Volante de corrida com feedback de força e pedais responsivos para uma experiência de simulação realista.",
+      "imagem": "img/volante.jpg"
+    },
+    {
+      "id": 21,
+      "nome": "Controle Xbox Elite Series 2",
+      "preco": 999,
+      "descricao": "Controle profissional com componentes intercambiáveis, paddles na parte traseira e customização avançada.",
+      "imagem": "img/controle.jpg"
+    },
+    {
+      "id": 22,
+      "nome": "SSD Samsung 970 EVO Plus 1TB (NVMe)",
+      "preco": 599,
+      "descricao": "SSD de alta velocidade para carregamentos ultrarrápidos de jogos e sistema, ideal para upgrades de PC.",
+      "imagem": "img/ssd-samsung.jpg"
+    },
+    {
+      "id": 23,
+      "nome": "Microfone HyperX QuadCast S",
+      "preco": 799,
+      "descricao": "Microfone USB premium com iluminação RGB dinâmica e quatro padrões polares, perfeito para streaming e gravação.",
+      "imagem": "img/hyperx.jpg"
+    },
+    {
+      "id": 24,
+      "nome": "Webcam Logitech C920S HD Pro",
+      "preco": 349,
+      "descricao": "Webcam Full HD com foco automático e correção de luz, ideal para transmissões e videochamadas.",
+      "imagem": "img/webcam.jpg"
+    },
+    {
+      "id": 25,
+      "nome": "Mousepad Gamer Razer Goliathus Extended Chroma",
+      "preco": 199,
+      "descricao": "Mousepad estendido com iluminação RGB personalizável e superfície otimizada para precisão e velocidade.",
+      "imagem": "img/mousepad.jpg"
+    },
+    {
+      "id": 26,
+      "nome": "Switch HDMI Ugreen 4K (3 Portas)",
+      "preco": 129,
+      "descricao": "Permite conectar múltiplos consoles/dispositivos HDMI a um único monitor ou TV, com suporte a 4K.",
+      "imagem": "img/switch-hdmi.jpg"
+    },
+    {
+      "id": 27,
+      "nome": "Kit Teclado e Mouse sem fio Logitech MK270",
+      "preco": 149,
+      "descricao": "Conjunto básico e confiável para uso diário e jogos casuais, com conexão sem fio estável.",
+      "imagem": "img/logitech-mk270.jpg"
+    },
+    {
+      "id": 28,
+      "nome": "Cooler para Notebook Cooler Master NotePal X-Lite II",
+      "preco": 189,
+      "descricao": "Base de resfriamento com design ergonômico e ventoinha silenciosa, para manter seu notebook gamer fresco.",
+      "imagem": "img/cooler-notebook.jpg"
+    },
+    {
+      "id": 29,
+      "nome": "Óculos VR Meta Quest 2",
+      "preco": 2499,
+      "descricao": "Headset de realidade virtual tudo-em-um para experiências imersivas em jogos e aplicativos.",
+      "imagem": "img/meta-quest2.jpg"
+    },
+    {
+      "id": 30,
+      "nome": "Animal Crossing: New Horizons",
+      "preco": 229.9,
+      "descricao": "Crie sua própria ilha paradisíaca e viva uma vida relaxante com seus personagens favoritos.",
+      "imagem": "img/animal-crossing.png"
+    },
+    {
+      "id": 31,
+      "nome": "The Witcher 3: Wild Hunt",
+      "preco": 149.9,
+      "descricao": "Um RPG de mundo aberto aclamado pela crítica, com uma história rica, personagens memoráveis e vastas terras para explorar.",
+      "imagem": "img/witcher-3.png"
     }
   ]
 }
